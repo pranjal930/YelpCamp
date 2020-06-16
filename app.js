@@ -50,7 +50,7 @@ app.use(indexRoutes);
 
 
 
-app.listen(3000,function(){
+app.listen(process.env.PORT || 5000,function(){
 	console.log("yelpcamp app running");
 	
 });
