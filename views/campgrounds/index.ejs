@@ -12,10 +12,10 @@
     <div class="row" style="display:flex;flex-wrap:wrap;">
 		<% campgrounds.forEach(function(campground){ %>
        <div class="col-md-3 col-sm-6" >
-		   <div class="thumbnail">
-			 <img src="<%= campground.image %>">  
+		   <div class="card" style="width: 18rem;">
+			 <img class="card-img-top" src="<%= campground.image %>" alt="card-img-cap">  
 		   </div>
-		  <div class="caption">
+		  <div class="card-title">
 			<h4><%= campground.name %></h4>
 		   </div>
 		   <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
