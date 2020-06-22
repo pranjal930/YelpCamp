@@ -27,9 +27,15 @@
 				</div>
 			</div>
 			<div class="well">
-				<div class="text-right">
-					<a class="btn btn-success" href="<%=campground._id%>/comments/new">Add a New Comment</a>
-				</div>
+				<h4><strong>Comments</strong></h4>
+				<%if(currentUser){%>
+				<form action="/campgrounds/<%=campground._id%>/comments" method="POST">
+				<div class="form-group"><input class="form-control" type="text" name="comment[text]" placeholder="Add a new comment"></div>
+				<div class="form-group"><button class="btn btn-s btn-primary">Submit</button></div>
+				</form>
+				<%} else {%>
+					<h5>You need to be logged in to post Comments</h5>
+				<%}%>
 				<hr>
 				<% campground.comments.forEach(function(comment){ %>
 				<div class="row">
